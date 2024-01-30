@@ -26,6 +26,15 @@
       </a>
     </li><!-- End Search Icon-->
 
+    <a href="/cart" class="btn btn-primary">
+    <i class="fa fa-shooping-cart"></i>Cart
+
+    @php $totalproducts = count(session('cart')) @endphp
+    <span class="badge badge-light">{{$totalproducts}}</span>
+    </a>
+
+
+
     <li class="nav-item dropdown">
 
       <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
