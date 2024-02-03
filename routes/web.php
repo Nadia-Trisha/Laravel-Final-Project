@@ -63,7 +63,6 @@ Route::middleware('auth')->group(function () {
 });
 
 
-
 Route::prefix('admin')->group(function () {
     Route::get('/login', [AdminController::class, 'login']);
     Route::post('/login', [AdminController::class, 'store'])->name('adminLogin');
@@ -88,10 +87,6 @@ Route::delete('remove-from-cart', [ProductController::class, 'remove'])->name('r
 
 
 Route::resource('brands', BrandController::class);
-
-
-
-
 
 
 require __DIR__.'/auth.php';

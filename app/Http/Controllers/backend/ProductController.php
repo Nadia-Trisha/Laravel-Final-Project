@@ -132,4 +132,11 @@ class ProductController extends Controller
         $product->delete();
         return redirect('product')->with('msg', 'Successfully Deleted');
     }
+
+
+
+
+    public function checkout(){
+        return
+    }
 }

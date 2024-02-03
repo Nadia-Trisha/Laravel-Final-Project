@@ -29,8 +29,17 @@
     <a href="/cart" class="btn btn-primary">
     <i class="fa fa-shooping-cart"></i>Cart
 
-    @php $totalproducts = count(session('cart')) @endphp
-    <span class="badge badge-light">{{$totalproducts}}</span>
+    {{-- check --}}
+    {{-- @php
+    $cart = session('cart');
+    $totalproducts = is_array($cart) ? count($cart) : 0;
+    @endphp --}}
+
+
+    {{-- @php $totalproducts = count(session('cart')) @endphp --}}
+
+
+    {{-- <span class="badge badge-light">{{$totalproducts}}</span> --}}
     </a>
 
 
