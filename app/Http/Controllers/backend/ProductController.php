@@ -136,7 +136,7 @@ class ProductController extends Controller
 
 
 
-    public function checkout(){
-        return
-    }
+    // public function checkout(){
+    //     return
+    // }
 }

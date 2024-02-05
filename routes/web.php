@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\frontend\ContactController;
 use App\Http\Controllers\Frontend\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
@@ -71,6 +72,7 @@ Route::prefix('admin')->group(function () {
 
 Route::middleware('admin')->group(function () {
     Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    
 });
 
 
@@ -87,6 +89,11 @@ Route::delete('remove-from-cart', [ProductController::class, 'remove'])->name('r
 
 
 Route::resource('brands', BrandController::class);
+
+
+//contact
+Route::get('/contact', [ContactController::class, 'allContact'])->name('allContact');
+
 
 
 require __DIR__.'/auth.php';

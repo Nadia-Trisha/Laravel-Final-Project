@@ -46,7 +46,7 @@
           <a href="menu" class="nav-item nav-link">Menu & Pricing</a>
           <a href="master" class="nav-item nav-link">Master Chefs</a>
           <a href="services" class="nav-item nav-link">Services</a>
-          <a href="contact" class="nav-item nav-link">Contact Us</a>
+          <a href="contact" class="nav-item nav-link">Message Now</a>
           <div class="nav-item dropdown">
               {{-- <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
               <div class="dropdown-menu m-0"> --}}

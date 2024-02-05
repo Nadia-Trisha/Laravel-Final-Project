@@ -10,7 +10,9 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\backend\CategoryController;
+
 use App\Http\Controllers\backend\ProductController;
+use App\Http\Controllers\frontend\ContactController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
@@ -83,5 +85,10 @@ Route::middleware('auth')->group(function () {
     Route::post('category/update', [CategoryController::class, 'update'])
                 ->name('category.update');
     Route::get('category/delete/{id}', [CategoryController::class, 'delete'])
-                ->name('category.delete');                            
+                ->name('category.delete'); 
+                
+//contact
+
 });
+Route::get('frontend/contact', [ContactController::class, 'contact']);
+Route::post('frontend/contact', [ContactController::class, 'store'])->name('contact.store');

@@ -29,22 +29,45 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-6">
-                <form>
+          
+                <form  method="post" action="{{route('contact.store')}} ">
+                    @csrf
                     <div class="row g-3">
                         <div class="col-sm-6">
-                            <input type="text" class="form-control bg-light border-0 px-4" placeholder="Your Name" style="height: 55px;">
+                            <input type="text" name="name" class="form-control bg-light border-0 px-4" placeholder="Your Name" style="height: 55px;">
                         </div>
                         <div class="col-sm-6">
-                            <input type="email" class="form-control bg-light border-0 px-4" placeholder="Your Email" style="height: 55px;">
+                            <input type="email" name="email" class="form-control bg-light border-0 px-4" placeholder="Your Email" style="height: 55px;">
                         </div>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control bg-light border-0 px-4" placeholder="Subject" style="height: 55px;">
+
+                        <div class="col-sm-6">
+                            <input type="text" name="phone" class="form-control bg-light border-0 px-4" placeholder="Phone" style="height: 55px;">
                         </div>
-                        <div class="col-sm-12">
-                            <textarea class="form-control bg-light border-0 px-4 py-3" rows="4" placeholder="Message"></textarea>
+                        {{-- <div class="col-sm-12">
+                           
+                            <select name="item" id="">
+                                <option value="">Select one</option>
+                                <option value="">Birthday Cake</option>
+                                <option value="">Vanila Cake</option>
+                                <option value="">Choclate Cake</option>
+                                <option value="">Carrot Cake</option>
+                                <option value="">Vanila Cake</option>
+                                <option value="">Strawberry Cake</option>
+                                <option value="">Red Velbet Cake</option>
+                            </select>
+                            
+                        </div> --}}
+                        <div class="col-sm-4">
+                            <textarea class="form-control bg-light border-0 px-4 py-3" rows="2" name="address" placeholder="address"></textarea>
                         </div>
+
+
+                        <div class="col-sm-6">
+                            <input type="text" name="subject" class="form-control bg-light border-0 px-4" placeholder="subject" style="height: 55px;">
+                        </div>
+
                         <div class="col-sm-12">
-                            <button class="btn btn-primary border-inner w-100 py-3" type="submit">Send Message</button>
+                            <button class="btn btn-primary border-inner w-100 py-3" type="submit">Send</button>
                         </div>
                     </div>
                 </form>
