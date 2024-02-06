@@ -92,7 +92,9 @@ Route::resource('brands', BrandController::class);
 
 
 //contact
-Route::get('/contact', [ContactController::class, 'allContact'])->name('allContact');
+Route::get('/contacts', [ContactController::class, 'allContact'])->name('allContact');
+
+Route::get('invoice', [ProductController::class, 'pdfview']);
 
 
 

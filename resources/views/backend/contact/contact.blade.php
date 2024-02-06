@@ -36,8 +36,6 @@
             </thead>
             <tbody>
               @foreach ($contact as $key=>$item)
-                  
-              @endforeach
               <tr>
                 <td>{{++$key}}</td>
                 <td>{{$item->name}}</td>
@@ -46,6 +44,7 @@
                 <td>{{$item->address}}</td>
                 <td>{{$item->subject}}</td>
               </tr>
+              @endforeach
             </tbody>
           </table>
           <!-- End Table with stripped rows -->

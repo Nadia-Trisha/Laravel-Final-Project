@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 
 class ProductController extends Controller
@@ -70,6 +71,23 @@ class ProductController extends Controller
             }
             session()->flash('success', 'Product removed successfully');
         }
+    }
+
+
+    public function pdfview(){
+        
+        $data = [
+            [
+                'quantity' => 1,
+                'description' => '1 Year Subscription',
+                'price' => '129.00'
+            ]
+        ];
+        
+        
+        
+        $pdf = Pdf::loadView('pdf',['data' => $data]);
+        return $pdf->download();
     }
 }
 

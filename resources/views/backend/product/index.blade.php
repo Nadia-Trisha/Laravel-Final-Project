@@ -52,9 +52,11 @@
                 <td>{{$item->name}}</td>
                 <td>{{$item->price}}</td>
                 <td> <img src="{{'images/'. $item->image}}" width="100" alt=""> </td>
-                <td>{{$item->category->name}}</td>
+                {{-- <td>{{$item->category->name}}</td> --}}
+                <td>{{ $item->category ? $item->category->name : 'N/A' }}</td>
+
                 <td>
-                 <!-- {{ implode(", ", $item->tags) }} -->
+                  {{ implode(", ", $item->tags) }} 
                 <ul>
                  @foreach($item->tags as $tag)
                   <li>{{$tag}}</li>   

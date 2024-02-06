@@ -36,6 +36,7 @@ class ContactController extends Controller
             }
     }
     public function allContact() {
+
         $contact = Contact::all();
         return view('backend.contact.contact', compact('contact'));
     }
