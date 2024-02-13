@@ -23,6 +23,7 @@
               <div class="text-start">
                   <h6 class="text-uppercase mb-1">Call Us</h6>
                   <span>+012 345 6789</span>
+                  <a href="contact" class="nav-item nav-link">Admin</a>
               </div>
           </div>
       </div>
@@ -43,10 +44,11 @@
       <div class="navbar-nav ms-auto mx-lg-auto py-0">
           <a href="/" class="nav-item nav-link active">Home</a>
           <a href="about" class="nav-item nav-link">About Us</a>
-          <a href="menu" class="nav-item nav-link">Menu & Pricing</a>
+          <a href="menu" class="nav-item nav-link">Order</a>
           <a href="master" class="nav-item nav-link">Master Chefs</a>
           <a href="services" class="nav-item nav-link">Services</a>
           <a href="contact" class="nav-item nav-link">Message Now</a>
+          <a href="contact" class="nav-item nav-link">User Login</a>
           <div class="nav-item dropdown">
               {{-- <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
               <div class="dropdown-menu m-0"> --}}
