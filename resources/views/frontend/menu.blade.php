@@ -21,22 +21,31 @@
                     <a class="nav-link text-white" data-bs-toggle="pill" href="#tab-3">Custom</a>
                 </li>
             </ul>
+
+
             <div class="tab-content">
                 <div id="tab-1" class="tab-pane fade show p-0 active">
                     <div class="row g-3">
+
+                        @foreach($data as $item)
+                       
+
                         <div class="col-lg-6">
                             <div class="d-flex h-100">
                                 <div class="flex-shrink-0">
-                                    <img class="img-fluid" src="frontend/assets/img/cake-6.jpg" alt="" style="width: 150px; height: 85px;">
-                                    <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
+                                    <img class="img-fluid" src="{{'images/'. $item->image}}" alt="" style="width: 150px; height: 85px;">
+                                    <h4 class="bg-dark text-primary p-2 m-0">{{$item->price}}</h4>
                                 </div>
                                 <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                    <h5 class="text-uppercase">Birthday Cake</h5>
-                                    <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
+                                    <h5 class="text-uppercase">{{$item->name}}</h5>
+                                    <span>{{$item->description}}</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
+                        @endforeach
+
+
+                        {{-- <div class="col-lg-6">
                             <div class="d-flex h-100">
                                 <div class="flex-shrink-0">
                                     <img class="img-fluid" src="frontend/assets/img/cake-11.jpg" alt="" style="width: 150px; height: 85px;">
@@ -95,7 +104,7 @@
                                     <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div id="tab-2" class="tab-pane fade show p-0">
@@ -112,7 +121,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
+                        {{-- <div class="col-lg-6">
                             <div class="d-flex h-100">
                                 <div class="flex-shrink-0">
                                     <img class="img-fluid" src="frontend/assets/img/cake-3.jpg" alt="" style="width: 150px; height: 85px;">
@@ -171,7 +180,7 @@
                                     <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div id="tab-3" class="tab-pane fade show p-0">
@@ -188,7 +197,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
+                        {{-- <div class="col-lg-6">
                             <div class="d-flex h-100">
                                 <div class="flex-shrink-0">
                                     <img class="img-fluid" src="frontend/assets/img/cake-4.jpg" alt="" style="width: 150px; height: 85px;">
@@ -247,7 +256,8 @@
                                     <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
+
                     </div>
                 </div>
             </div>

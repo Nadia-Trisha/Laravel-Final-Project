@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\frontend\ContactController;
+use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
@@ -28,9 +29,7 @@ Route::get('/about', function () {
     return view('frontend.about');
 })->name('about');
 
-Route::get('/menu', function () {
-    return view('frontend.menu');
-})->name('menu');
+Route::get('/menu', [HomeController::class, 'index'])->name('menu');
 
 Route::get('/master', function () {
     return view('frontend.master');
