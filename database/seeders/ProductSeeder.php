@@ -15,58 +15,32 @@ class ProductSeeder extends Seeder
     public function run(): void
     {
         DB::table('products')->insert([
-            'name' => 'White Shirt',
-            'description' => 'product description content',
-            'image' => 'images/no_photo.jpg',
-            'tags' => 'no tag',
-            'price' => '100',
+            'name' => 'Chocolate cake',
+            'description' => 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,',
+            'image' => 'chocolate.jpg',
+            // 'tags' => 'no tag',
+            'price' => '1000',
             'category_id' => '1',
             'availibility' => '1'
         ]);
         DB::table('products')->insert([
-            'name' => 'Black Shirt',
-            'description' => 'product description content',
-            'image' => 'images/no_photo.jpg',
-            'tags' => 'no tag',
-            'price' => '100',
-            'category_id' => '1',
-            'availibility' => '1'
-        ]);
-        DB::table('products')->insert([
-            'name' => 'Black Pant',
-            'description' => 'product description content',
-            'image' => 'images/no_photo.jpg',
-            'tags' => 'no tag',
-            'price' => '100',
+            'name' => 'Vanila cake',
+            'description' => 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,',
+            'image' => 'wedding1.jpg',
+            // 'tags' => 'no tag',
+            'price' => '900',
             'category_id' => '2',
             'availibility' => '1'
         ]);
         DB::table('products')->insert([
-            'name' => 'White Pant',
-            'description' => 'product description content',
-            'image' => 'images/no_photo.jpg',
-            'tags' => 'no tag',
-            'price' => '100',
-            'category_id' => '2',
-            'availibility' => '1'
-        ]);
-        DB::table('products')->insert([
-            'name' => 'Black Shoe',
-            'description' => 'product description content',
-            'image' => 'images/no_photo.jpg',
-            'tags' => 'no tag',
-            'price' => '100',
+            'name' => 'Red Velbet cake',
+            'description' => 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,',
+            'image' => 'redvelbet.jpg',
+            // 'tags' => 'no tag',
+            'price' => '800',
             'category_id' => '3',
             'availibility' => '1'
         ]);
-        DB::table('products')->insert([
-            'name' => 'Gray Shoe',
-            'description' => 'product description content',
-            'image' => 'images/no_photo.jpg',
-            'tags' => 'no tag',
-            'price' => '100',
-            'category_id' => '3',
-            'availibility' => '1'
-        ]);
+
     }
 }

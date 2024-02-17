@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
@@ -12,7 +13,7 @@ class ProductController extends Controller
 {
     public function cart()
     {
-        return view('backend.cart');
+        return view('frontend.cart');
     }
   
     /**
@@ -73,6 +74,34 @@ class ProductController extends Controller
         }
     }
 
+    public function checkout(){
+        return view('frontend.checkout');
+    }
+
+    public function order(Request $request){
+        
+        $order = new Order();
+         $order_data = $request->all();
+         $order_data['order_number'] = "ORD" . " " . rand(5, 5000);
+        //  $order_data['quantity'] = 1;
+         $order_data['country'] = "Bangladesh";
+        //  print_r($order_data) ; 
+        $order->create($order_data);
+        $request->session()->forget('cart');
+
+         
+        //  print_r(session('cart'));
+
+        //  dd($order_data);
+        return redirect('menu')->with('msg', 'Order Successfully Placed. Thank You for Order');
+
+
+        //  $carts = session('cart');
+        //  print_r($carts) ; 
+        //  $order_data['coupon'] = '100';
+        //  $order_data['shipping_id'] = '15';
+        //  $order->fill($order_data);
+     }
 
     public function pdfview(){
         

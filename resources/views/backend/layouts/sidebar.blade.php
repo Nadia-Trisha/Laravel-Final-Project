@@ -3,7 +3,7 @@
 <ul class="sidebar-nav" id="sidebar-nav">
 
   <li class="nav-item">
-    <a class="nav-link " href="index.html">
+    <a class="nav-link " href="/dashboard">
       <i class="bi bi-grid"></i>
       <span>Dashboard</span>
     </a>
@@ -59,8 +59,8 @@
     </a>
     <ul id="order-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
-        <a href="{{URL('product')}}">
-          <i class="bi bi-circle"></i><span>New Order</span>
+        <a href="{{URL('orders')}}">
+          <i class="bi bi-circle"></i><span>All Order</span>
         </a>
       </li>
       <li>

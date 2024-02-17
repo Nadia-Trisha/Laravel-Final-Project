@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\backend\CategoryController;
+use App\Http\Controllers\backend\OrderControllerBackend;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\frontend\ContactController;
 use App\Http\Controllers\Frontend\HomeController;
@@ -85,7 +86,14 @@ Route::get('add-to-cart/{id}', [ProductController::class, 'addToCart'])->name('a
 Route::patch('update-cart', [ProductController::class, 'update'])->name('update.cart');
 Route::delete('remove-from-cart', [ProductController::class, 'remove'])->name('remove.from.cart');
   
+// Checkout
+Route::get('checkout', [ProductController::class, 'checkout'])->name('checkout.page');
+Route::post('order', [ProductController::class, 'order'])->name('checkout.order');
+Route::get('reports', [ProductController::class, 'reports'])->name('reports');
 
+    // Orders
+    Route::get('orders', [OrderControllerBackend::class, 'index']);
+    Route::post('order/status/{id}', [OrderControllerBackend::class, 'status'])->name('order.status');
 
 Route::resource('brands', BrandController::class);
 

@@ -55,14 +55,7 @@
                 {{-- <td>{{$item->category->name}}</td> --}}
                 <td>{{ $item->category ? $item->category->name : 'N/A' }}</td>
 
-                <td>
-                  {{ implode(", ", $item->tags) }} 
-                <ul>
-                 @foreach($item->tags as $tag)
-                  <li>{{$tag}}</li>   
-                 @endforeach
-               </ul>
-                </td>
+            
                 
                 <td>{!!$item->description!!}</td>
                 <td>
