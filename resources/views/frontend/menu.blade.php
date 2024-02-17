@@ -35,6 +35,7 @@
                                 <div class="flex-shrink-0">
                                     <img class="img-fluid" src="{{'images/'. $item->image}}" alt="" style="width: 150px; height: 85px;">
                                     <h4 class="bg-dark text-primary p-2 m-0">{{$item->price}}</h4>
+                                    <a href="{{route('add.to.cart', $item->id)}}"><button type="button" class="btn btn-primary border-0 rounded-pill px-4 py-3 mt-3">Add to Cart</button></a> 
                                 </div>
                                 <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
                                     <h5 class="text-uppercase">{{$item->name}}</h5>

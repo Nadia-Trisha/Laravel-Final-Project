@@ -40,7 +40,7 @@
             <div class="row mb-3">
               <label for="inputText" class="col-sm-2 col-form-label">Description</label>
               <div class="col-sm-10">
-                <textarea name="description" class="form-control tinymce-editor" rows="10" style="height: 100px" >{{old('description')}}</textarea>
+                <textarea name="description" class="form-control " rows="10" style="height: 100px" >{{old('description')}}</textarea>
               </div>
             </div><br>
             <div class="row mb-3">
