@@ -28,8 +28,8 @@
                         <th>Customer Name</th>
                         <th>Phone No</th>
                         <th>Address</th>
-                        <th>Invoices</th>
                         <th>Status</th>
+                        <th>Status Change</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,17 +43,22 @@
                             <td>{{$order->customerName}}</td>                                    
                             <td>{{$order->phone}}</td>                                    
                             <td>{{$order->address}}</td>                                    
-                            <td><a href="{{url('invoice/'. $order->order_number) }}" target="_blank" class="btn btn-dark">Invoice</a></td>                                    
+                            <td>{{$order->status}}</td>                                    
+                            {{-- <td><a href="{{url('invoice/'. $order->order_number) }}" target="_blank" class="btn btn-dark">Invoice</a></td>                                     --}}
                              
                             <td>
-                                @if (!$order->status==0)
-                                <button class="btn btn-success">Completed</button>
-                                @else
-                                <form action="{{route('order.status',$order->id)}}" method="post">
-                                  @csrf
-                                  <button class="btn btn-warning" type="submit">Received</button>
-                                </form>
-                                @endif
+                              <form action="{{route('order.status',$order->id)}}" method="post">
+                                @csrf
+                               
+                                <select name="status" id="">
+                                  <option  disabled>Select One</option>
+                                  <option value="0">Cancle</option>
+                                  <option value="1">confirm</option>
+                                  <option value="2">panding</option>
+                                </select>
+                                <button type="submit">Change</button>
+                              </form>
+                                
                             </td>                                   
                         </tr>
                     @endforeach                              

@@ -51,7 +51,7 @@
                 <td>{{$item->id}}</td>
                 <td>{{$item->name}}</td>
                 <td>{{$item->price}}</td>
-                <td> <img src="{{'images/'. $item->image}}" width="100" alt=""> </td>
+                <td> <img src="{{'images/cake/'. $item->image}}" width="100" alt=""> </td>
                 {{-- <td>{{$item->category->name}}</td> --}}
                 <td>{{ $item->category ? $item->category->name : 'N/A' }}</td>
 
@@ -67,6 +67,26 @@
                <p class="btn-holder"><a href="{{ route('add.to.cart', $item->id) }}" class="btn btn-warning btn-block text-center" role="button">Add to cart</a> </p>
               
               </td> 
+              {{-- copy --}}
+              <td class="" style="display:flex; gap:10px">
+                <div>
+                  <form action="{{route('booking.status',$item->id)}}" method="post">
+                    @csrf
+                    <select name="status" id="">
+                      <option value="" disabled>Select One</option>
+                      <option value="0">Cancle</option>
+                      <option value="1">confirm</option>
+                      <option value="2">panding</option>
+                    </select>
+                    <button type="submit">Change</button>
+                  </form>
+                </div>
+                <div>
+                  <a href="{{route('frontend.booking',$item->id)}}" class="btn btn-sm btn-dark" style="margin-left:10px;"> Delete</a>
+                  <a href="{{route('invoiceperid',$item->id)}}" target="_blank" class="btn btn-sm btn-dark" style="margin-left:10px;"> Invoice</a>
+                </div>
+              </td>
+              {{-- end --}}
               </tr>
             @endforeach 
             </tbody>

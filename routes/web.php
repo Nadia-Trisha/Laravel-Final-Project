@@ -94,6 +94,7 @@ Route::get('reports', [ProductController::class, 'reports'])->name('reports');
     // Orders
     Route::get('orders', [OrderControllerBackend::class, 'index']);
     Route::post('order/status/{id}', [OrderControllerBackend::class, 'status'])->name('order.status');
+    Route::post('order/status/{id}', [ProductController::class,'status'])->name('order.status');
 
 Route::resource('brands', BrandController::class);
 
@@ -102,6 +103,18 @@ Route::resource('brands', BrandController::class);
 Route::get('/contacts', [ContactController::class, 'allContact'])->name('allContact');
 
 Route::get('invoice', [ProductController::class, 'pdfview']);
+
+
+// Frontend Booking//
+Route::get('frontend/booking', [ProductController::class,'index'])->name('booking.index');
+Route::get('frontend/eventbooking/{id}', [ProductController::class,'create'])->name('frontend.eventbooking')->middleware('customer'); // customer middleware
+Route::post('booking/store', [ProductController::class, 'store'])->name('booking.store');
+// for customer booking status//
+Route::post('booking/status/{id}', [ProductController::class,'status'])->name('booking.status');
+
+Route::get('booking/delete/{id}',[ProductController::class,'delete'])->name('frontend.booking');
+
+
 
 
 

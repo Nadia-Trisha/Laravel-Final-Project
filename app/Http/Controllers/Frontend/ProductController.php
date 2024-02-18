@@ -74,6 +74,8 @@ class ProductController extends Controller
         }
     }
 
+
+
     public function checkout(){
         return view('frontend.checkout');
     }
@@ -118,5 +120,16 @@ class ProductController extends Controller
         $pdf = Pdf::loadView('pdf',['data' => $data]);
         return $pdf->download();
     }
+
+    public function status(Request $request,$id){
+        $order = Order::find($id);
+        $data = [
+            'status'=>$request->status
+        ];
+        $order->update($data);
+        // return 'khibe baba'; }
+        return back()->with('msg','status updated');
+    }
+   
 }
 
