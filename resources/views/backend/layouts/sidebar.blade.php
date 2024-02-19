@@ -63,11 +63,7 @@
           <i class="bi bi-circle"></i><span>All Order</span>
         </a>
       </li>
-      <li>
-        <a href="{{URL('product/create')}}">
-          <i class="bi bi-circle"></i><span>Confirmed</span>
-        </a>
-      </li>
+      
       <li>
         <a href="{{URL('product/create')}}">
           <i class="bi bi-circle"></i><span>On the Way</span>
@@ -79,41 +75,29 @@
           <i class="bi bi-circle"></i><span>Delivered</span>
         </a>
       </li>
-      <li>
-        <a href="{{URL('product/create')}}">
-          <i class="bi bi-circle"></i><span>Confirmed</span>
-        </a>
-      </li>
-      <li>
-        <a href="{{URL('product/create')}}">
-          <i class="bi bi-circle"></i><span>Cancelled</span>
-        </a>
-      </li>
-      <li>
-        <a href="{{URL('product/create')}}">
-          <i class="bi bi-circle"></i><span>All orders</span>
-        </a>
-      </li>
+      
+      
+      
     </ul>
   </li>
 
   {{-- order end --}}
 
 
- <!-- Category Navi -->
+ {{-- <!-- Category Navi --> brand convert with master cheif --}}
  <li class="nav-item">
   <a class="nav-link collapsed" data-bs-target="#brand-nav" data-bs-toggle="collapse" href="#">
-    <i class="bi bi-layout-text-window-reverse"></i><span>Brand Manage</span><i class="bi bi-chevron-down ms-auto"></i>
+    <i class="bi bi-layout-text-window-reverse"></i><span>Master Cheif</span><i class="bi bi-chevron-down ms-auto"></i>
   </a>
   <ul id="brand-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
     <li>
-      <a href="{{route('category.index')}}">
-        <i class="bi bi-circle"></i><span>All Brand</span>
+      <a href="{{route('brands.index')}}">
+        <i class="bi bi-circle"></i><span>All Master Cheif</span>
       </a>
     </li>
     <li>
-      <a href="{{URL('category/create')}}">
-        <i class="bi bi-circle"></i><span> New Brand</span>
+      <a href="{{route('brands.create')}}">
+        <i class="bi bi-circle"></i><span>New Master Cheif</span>
       </a>
     </li>
   </ul>
@@ -125,7 +109,7 @@
   <!-- Category Navi -->
   <li class="nav-item">
     <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-      <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
+      {{-- <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i> --}}
     </a>
     <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
        <li>
@@ -154,10 +138,10 @@
         </a>
       </li>
       <li> --}}
-        <a href="components-cards.html">
+        {{-- <a href="components-cards.html">
           <i class="bi bi-circle"></i><span>Cards</span>
         </a>
-      </li>
+      </li> --}}
       {{-- <li>
         <a href="components-carousel.html">
           <i class="bi bi-circle"></i><span>Carousel</span>
@@ -179,10 +163,10 @@
         </a>
       </li>
       <li> --}}
-        <a href="components-pagination.html">
+        {{-- <a href="components-pagination.html">
           <i class="bi bi-circle"></i><span>Pagination</span>
         </a>
-      </li>
+      </li> --}}
       {{-- <li>
         <a href="components-progress.html">
           <i class="bi bi-circle"></i><span>Progress</span>

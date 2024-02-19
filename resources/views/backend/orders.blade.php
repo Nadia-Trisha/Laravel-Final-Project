@@ -51,12 +51,12 @@
                                 @csrf
                                
                                 <select name="status" id="">
-                                  <option  disabled>Select One</option>
+                                  <option selected disabled>Select One</option>
                                   <option value="0">Cancle</option>
                                   <option value="1">confirm</option>
                                   <option value="2">panding</option>
                                 </select>
-                                <button type="submit">Change</button>
+                                <button type="submit">change</button>
                               </form>
                                 
                             </td>                                   

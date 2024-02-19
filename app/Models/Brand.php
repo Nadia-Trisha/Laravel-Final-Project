@@ -7,8 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Brand extends Model
 {
+
+
+    protected $table= 'masterchief';
     protected $fillable = [
-        'name', 'description', '_token',
+        'name', 'designation', 'photo',
         // add other fields as needed
     ];
+
+
 }

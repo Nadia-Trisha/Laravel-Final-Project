@@ -1,9 +1,9 @@
-<header id="header" class="header fixed-top d-flex align-items-center">
+<header id="header" class="header fixed-top d-flex align-items-center ">
 
 <div class="d-flex align-items-center justify-content-between">
   <a href="/dashboard" class="logo d-flex align-items-center">  
-    <img src="{{asset('assets/img/logo.png')}}" alt="">
-    <span class="d-none d-lg-block">NiceAdmin</span>
+    <img src="{{asset('assets/img/wedding1.jpg')}}" alt="image" width="70" height="90">
+    <span class="d-none d-lg-block">Cake Shop</span>
   </a>
   <i class="bi bi-list toggle-sidebar-btn"></i>
 </div><!-- End Logo -->
@@ -186,14 +186,14 @@
     <li class="nav-item dropdown pe-3">
 
       <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-        <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-        ;
+        <img src="assets/img/trisha.jpg" alt="Profile" class="rounded-circle" width="70" height="80">
+        
         {{-- <span class="d-none d-md-block dropdown-toggle ps-2">{{auth()->user()->name}}</span> --}}
       </a><!-- End Profile Iamge Icon -->
 
       <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
         <li class="dropdown-header">
-          <h6>Kevin Anderson</h6>
+          <h6>Nadia Trisha</h6>
           <span>Web Designer</span>
         </li>
         <li>

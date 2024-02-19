@@ -96,6 +96,7 @@ Route::get('reports', [ProductController::class, 'reports'])->name('reports');
     Route::post('order/status/{id}', [OrderControllerBackend::class, 'status'])->name('order.status');
     Route::post('order/status/{id}', [ProductController::class,'status'])->name('order.status');
 
+// Brand
 Route::resource('brands', BrandController::class);
 
 

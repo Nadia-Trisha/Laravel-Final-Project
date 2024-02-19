@@ -6,16 +6,18 @@
 
 <table class="table table-bordered">
     <tr>
-        <th>No</th>
+        <th>ID</th>
         <th>Name</th>
-        <th>Details</th>
+        <th>Image</th>
+        <th>Designation</th>
         <th width="280px">Action</th>
     </tr>
     @foreach ($brands as $brand)
     <tr>
         <td>{{ ++$i }}</td>
         <td>{{ $brand->name }}</td>
-        <td>{{ $brand->detail }}</td>
+        <td>{{ $brand->designation }}</td>
+        <td>{{ $brand->image }}</td>
         <td>
             <form action="{{ route('brands.destroy',$brand->id) }}" method="POST">
 

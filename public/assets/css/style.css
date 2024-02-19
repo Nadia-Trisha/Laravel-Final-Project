@@ -15,7 +15,7 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  background: #f6f9ff;
+  background: #aec8ab73;
   color: #444444;
 }
 
@@ -379,9 +379,9 @@ h6 {
 .header {
   transition: all 0.5s;
   z-index: 997;
-  height: 60px;
+  height: 70px;
   box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
-  background-color: #fff;
+  background-color: #eef0b0;
   padding-left: 20px;
   /* Toggle Sidebar Button */
   /* Search Bar */
@@ -608,7 +608,7 @@ h6 {
   padding: 20px;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: #aab7cf transparent;
+  scrollbar-color: #051533 transparent;
   box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
   background-color: #fff;
 }
@@ -622,7 +622,7 @@ h6 {
 .sidebar::-webkit-scrollbar {
   width: 5px;
   height: 8px;
-  background-color: #fff;
+  background-color: #eee3e3;
 }
 
 .sidebar::-webkit-scrollbar-thumb {
@@ -684,9 +684,9 @@ h6 {
   align-items: center;
   font-size: 15px;
   font-weight: 600;
-  color: #4154f1;
+  color: #e2e4f0;
   transition: 0.3;
-  background: #f6f9ff;
+  background: #6a288b;
   padding: 10px 15px;
   border-radius: 4px;
 }
@@ -699,7 +699,7 @@ h6 {
 
 .sidebar-nav .nav-link.collapsed {
   color: #012970;
-  background: #fff;
+  background: #e27e7e;
 }
 
 .sidebar-nav .nav-link.collapsed i {
@@ -768,7 +768,7 @@ h6 {
 }
 
 .dashboard .filter .icon {
-  color: #aab7cf;
+  color: #244176;
   padding-right: 20px;
   padding-bottom: 5px;
   transition: 0.3s;
@@ -789,7 +789,7 @@ h6 {
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 1px;
-  color: #aab7cf;
+  color: #e6ebf3;
   margin-bottom: 0;
   padding: 0;
 }
@@ -822,7 +822,7 @@ h6 {
 
 .dashboard .sales-card .card-icon {
   color: #4154f1;
-  background: #f6f6fe;
+  background: #9494d8;
 }
 
 .dashboard .revenue-card .card-icon {
@@ -841,7 +841,7 @@ h6 {
 }
 
 .dashboard .activity .activity-item .activite-label {
-  color: #888;
+  color: #270357;
   position: relative;
   flex-shrink: 0;
   flex-grow: 0;
@@ -855,7 +855,7 @@ h6 {
   width: 4px;
   top: 0;
   bottom: 0;
-  background-color: #eceefe;
+  background-color: #c3c9f4;
 }
 
 .dashboard .activity .activity-item .activity-badge {
@@ -921,7 +921,7 @@ h6 {
 }
 
 .dashboard .recent-sales .table thead {
-  background: #f6f6fe;
+  background: #c5c5ed;
 }
 
 .dashboard .recent-sales .table thead th {

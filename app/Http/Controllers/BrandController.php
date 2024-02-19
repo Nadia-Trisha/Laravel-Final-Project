@@ -12,9 +12,9 @@ class BrandController extends Controller
      */
     public function index()
     {
-        $brands = brand::latest()->paginate(3);
+        $brands = Brand::latest()->paginate(3);
         
-        return view('backend.brands.index',compact('brands'))
+        return view('backend.masterchief.index', compact('brands'))
                     ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -23,7 +23,7 @@ class BrandController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.masterchief.create');
     }
 
     /**
@@ -31,7 +31,28 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|min:4',
+            'designation' => 'required|min:4',
+            'photo' => 'mimes:jpg,jpeg,png',
+        ]);
+
+        $filename = time() . "." . $request->photo->extension();
+        
+        $data = [ 
+            'name' => $request->name,
+            'designation' => $request->designation,
+            'image' => $filename, 
+        ];
+
+        $brand = Brand::create($data);
+        
+        if ($brand) {
+            $request->photo->move('images', $filename);    
+            return redirect('brand')->with('msg', 'Successfully Added');
+        }
+        
+        return back()->withInput()->with('error', 'Failed to create brand');
     }
 
     /**
@@ -39,7 +60,7 @@ class BrandController extends Controller
      */
     public function show(Brand $brand)
     {
-        return view('backend.brands.show',compact('brand'));
+        return view('backend.brands.show', compact('brand'));
     }
 
     /**
@@ -47,28 +68,26 @@ class BrandController extends Controller
      */
     public function edit(Brand $brand)
     {
-        return view('backend.brands.edit',compact('brand'));
+        return view('backend.brands.edit', compact('brand'));
     }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, Brand $brand)
-{
-    $request->validate([
-        'name' => 'required',
-        'detail' => 'required',
-    ]);
+    {
+        $request->validate([
+            'name' => 'required',
+            'detail' => 'required',
+        ]);
 
-    // Exclude _token from the request data
-    $data = $request->except(['_token']);
+        $data = $request->except(['_token']);
 
-    $brand->update($data);
+        $brand->update($data);
 
-    return redirect()->route('brands.index')
-                    ->with('success', 'Brand updated successfully');
-}
-
+        return redirect()->route('brands.index')
+                        ->with('success', 'Brand updated successfully');
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -78,6 +97,6 @@ class BrandController extends Controller
         $brand->delete();
          
         return redirect()->route('brands.index')
-                        ->with('success','Product deleted successfully');
+                        ->with('success', 'Brand deleted successfully');
     }
 }
