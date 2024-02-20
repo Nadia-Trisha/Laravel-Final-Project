@@ -34,10 +34,10 @@ class BrandController extends Controller
         $request->validate([
             'name' => 'required|min:4',
             'designation' => 'required|min:4',
-            'photo' => 'mimes:jpg,jpeg,png',
+            'image' => 'mimes:jpg,jpeg,png',
         ]);
 
-        $filename = time() . "." . $request->photo->extension();
+        $filename = time() . "." . $request->image->extension();
         
         $data = [ 
             'name' => $request->name,
@@ -48,11 +48,12 @@ class BrandController extends Controller
         $brand = Brand::create($data);
         
         if ($brand) {
-            $request->photo->move('images', $filename);    
-            return redirect('brand')->with('msg', 'Successfully Added');
+            $request->image->move('images', $filename); 
+            return redirect()->route('brands.index')->with('msg','masterchief insert successfully ');   
+            // return redirect->()route->()->with('msg', 'Successfully Added');
         }
         
-        return back()->withInput()->with('error', 'Failed to create brand');
+      
     }
 
     /**
@@ -67,8 +68,12 @@ class BrandController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(Brand $brand)
+
     {
-        return view('backend.brands.edit', compact('brand'));
+
+        $products = Brand::find($brand);
+        
+         return view('backend.masterchief.edit', compact('brand'));
     }
 
     /**

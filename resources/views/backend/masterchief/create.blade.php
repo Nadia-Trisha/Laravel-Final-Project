@@ -21,9 +21,15 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">mastercheif Entry</h5>
+          
+      
+    @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+    @endforeach
+
 
           <!-- General Form Elements -->
-          <form method="post" action="{{ route('brands.store') }}">
+          <form method="post" action="{{ route('brands.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="row mb-3">
               <label for="inputText" class="col-sm-2 col-form-label">Name</label>
