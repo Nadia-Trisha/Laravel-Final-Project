@@ -12,6 +12,7 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\backend\CategoryController;
 
 use App\Http\Controllers\backend\ProductController;
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\frontend\ContactController;
 use Illuminate\Support\Facades\Route;
 
@@ -76,8 +77,8 @@ Route::middleware('auth')->group(function () {
 // Category
     Route::get('category', [CategoryController::class, 'index'])
                 ->name('category.index');  
-    Route::get('masterchief/create', [CategoryController::class, 'create'])
-                ->name('category.create'); 
+    // Route::get('brands/create', [BrandController::class, 'create']);
+                
     Route::post('category/store', [CategoryController::class, 'store'])
                 ->name('category.store');
     Route::get('category/edit/{id}', [CategoryController::class, 'edit'])

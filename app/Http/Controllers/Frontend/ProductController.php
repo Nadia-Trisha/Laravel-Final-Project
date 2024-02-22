@@ -62,7 +62,7 @@ class ProductController extends Controller
      *
      * @return response()
      */
-    public function remove(Request $request)
+    public function delete(Request $request)
     {
         if($request->id) {
             $cart = session()->get('cart');
@@ -95,7 +95,7 @@ class ProductController extends Controller
         //  print_r(session('cart'));
 
         //  dd($order_data);
-        return redirect('menu')->with('msg', 'Order Successfully Placed. Thank You for Order');
+        return redirect('menu')->with('msg','Order Successfully Placed. Thank You for Order');
 
 
         //  $carts = session('cart');

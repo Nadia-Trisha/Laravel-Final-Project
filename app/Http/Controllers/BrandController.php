@@ -14,7 +14,7 @@ class BrandController extends Controller
     {
         $brands = Brand::latest()->paginate(3);
         
-        return view('backend.masterchief.index', compact('brands'))
+        return view('backend.brands.index', compact('brands'))
                     ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -23,7 +23,7 @@ class BrandController extends Controller
      */
     public function create()
     {
-        return view('backend.masterchief.create');
+        return view('backend.brands.create');
     }
 
     /**
@@ -73,7 +73,7 @@ class BrandController extends Controller
 
         $products = Brand::find($brand);
         
-         return view('backend.masterchief.edit', compact('brand'));
+         return view('backend.brands.edit', compact('brand'));
     }
 
     /**

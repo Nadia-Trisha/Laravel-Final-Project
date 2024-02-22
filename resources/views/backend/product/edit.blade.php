@@ -109,7 +109,7 @@
                     <input class="form-control" type="file" name="photo" id="formFile">
                   </div>
                 </div>
-                <img src="{{asset('images/' . $products->image)}}" alt="">
+                <img src="{{asset('images/'. $products->image)}}" alt="">
             <div class="row mb-3">
               <label class="col-sm-2 col-form-label">Update Button</label>
               <div class="col-sm-10">

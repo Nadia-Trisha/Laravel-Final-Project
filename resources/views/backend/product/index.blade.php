@@ -20,7 +20,7 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Datatables</h5>
-          <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable. Check for <a href="https://fiduswriter.github.io/simple-datatables/demos/" target="_blank">more examples</a>.</p>
+          {{-- <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable. Check for <a href="https://fiduswriter.github.io/simple-datatables/demos/" target="_blank">more examples</a>.</p> --}}
 
           <!-- Table with stripped rows -->
 
@@ -39,8 +39,8 @@
                 <th>Price</th>
                 <th>Image</th>
                 <th>Category</th>
-                <th>Tags</th>
                 <th>Description</th>
+                <th>Tags</th>
                 <th>Action</th>
                 
               </tr>
@@ -56,21 +56,23 @@
                 <td>{{ $item->category ? $item->category->name : 'N/A' }}</td>
 
             
-                
+              
                 <td>{!!$item->description!!}</td>
+                
+                {{-- <td>{{$item->tags}}</td> --}}
                 <td>
                   
-               <a href="{{route('product.edit', $item->id)}}">Edit</a>  | 
-                  
-               <a href="{{route('product.delete', $item->id)}}" onclick="return confirm('Are you sure to delete?')" >Delete</a> 
-
-               <p class="btn-holder"><a href="{{ route('add.to.cart', $item->id) }}" class="btn btn-warning btn-block text-center" role="button">Add to cart</a> </p>
+               {{-- <p class="btn-holder"><a href="{{ route('add.to.cart', $item->id) }}" class="btn btn-warning btn-block text-center" role="button">Add to cart</a> </p> --}}
               
               </td> 
               {{-- copy --}}
               <td class="" style="display:flex; gap:10px">
+               
+                  
+               
+ 
                 <div>
-                  <form action="{{route('booking.status',$item->id)}}" method="post">
+                  {{-- <form action="{{route('booking.status',$item->id)}}" method="post">
                     @csrf
                     <select name="status" id="">
                       <option value="" disabled>Select One</option>
@@ -79,10 +81,11 @@
                       <option value="2">panding</option>
                     </select>
                     <button type="submit">Change</button>
-                  </form>
+                  </form> --}}
                 </div>
                 <div>
-                  <a href="{{route('frontend.booking',$item->id)}}" class="btn btn-sm btn-dark" style="margin-left:10px;"> Delete</a>
+                  <a href="{{route('product.edit', $item->id)}}" class="btn btn-sm btn-warning" >Edit</a> 
+                  <a href="{{route('product.delete', $item->id)}}"class="btn btn-sm btn-dark" onclick="return confirm('Are you sure to delete?')">Delete</a>
                   {{-- <a href="{{route('invoiceperid',$item->id)}}" target="_blank" class="btn btn-sm btn-dark" style="margin-left:10px;"> Invoice</a> --}}
                 </div>
               </td>

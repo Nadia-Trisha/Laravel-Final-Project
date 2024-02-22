@@ -23,7 +23,7 @@ class CategoryController extends Controller
 
     public function create()
     {
-        return view('backend.masterchief.create');
+        return view('backend.brands.create');
     }
 
     public function store(Request $request)

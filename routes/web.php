@@ -111,9 +111,12 @@ Route::get('frontend/booking', [ProductController::class,'index'])->name('bookin
 Route::get('frontend/eventbooking/{id}', [ProductController::class,'create'])->name('frontend.eventbooking')->middleware('customer'); // customer middleware
 Route::post('booking/store', [ProductController::class, 'store'])->name('booking.store');
 // for customer booking status//
-Route::post('booking/status/{id}', [ProductController::class,'status'])->name('booking.status');
 
-Route::get('booking/delete/{id}',[ProductController::class,'delete'])->name('frontend.booking');
+Route::post('product/status/{id}', [ProductController::class,'status'])->name('booking.status');
+
+Route::post('product/edit/{id}', [ProductController::class,'update'])->name('product.edit');
+
+Route::get('product/delete/{id}',[ProductController::class,'delete'])->name('product.delete');
 
 
 

@@ -128,9 +128,10 @@ class ProductController extends Controller
      */
     public function delete(string $id)
     {
-        $product = Product::find($id);
-        $product->delete();
-        return redirect('product')->with('msg', 'Successfully Deleted');
+         $product = Product::find($id);
+         $product->delete();
+         return redirect('product')->with('msg', 'Successfully Deleted');
+        // echo $id;
     }
 
 
