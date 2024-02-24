@@ -14,7 +14,12 @@ use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\frontend\ContactController;
+use App\Http\Controllers\Frontend\CustomerController;
 use Illuminate\Support\Facades\Route;
+
+
+
+
 
 Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
@@ -93,3 +98,13 @@ Route::middleware('auth')->group(function () {
 });
 Route::get('frontend/contact', [ContactController::class, 'contact']);
 Route::post('frontend/contact', [ContactController::class, 'store'])->name('contact.store');
+
+
+// Customer
+//Route::get('loginCustomer', [CustomerController::class, 'index'])->name('customer_login_form');
+// Route::get('customer/register', [CustomerController::class, 'create'])->name('student.register');
+// Route::post('customer/store', [CustomerController::class, 'store'])->name('student.store');
+Route::get('customer-login', [CustomerController::class, 'index'])->name('customer.login');
+Route::post('customer-login', [CustomerController::class, 'login']);
+Route::post('customer/logout', [CustomerController::class, 'destroy'])->name('customer.logout');
+Route::get('customer/dashboard', [CustomerController::class, 'dashboard'])->name('customer.dashboard')->middleware('customer');

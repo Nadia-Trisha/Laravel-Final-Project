@@ -48,7 +48,6 @@
           <a href="master" class="nav-item nav-link">Master Chefs</a>
           <a href="services" class="nav-item nav-link">Services</a>
           <a href="contact" class="nav-item nav-link">Message Now</a>
-          <a href="contact" class="nav-item nav-link">User Login</a>
           <a href="{{url('cart')}}" class="nav-item nav-link">Cart
             <i class="fa-solid fa-cart-shopping" style="color: #fffb00;">
                 <span class="badge bg-danger text-white rounded-pill bg-primary p-2 ms-2">
@@ -56,12 +55,21 @@
                 </span>
             </i>
         </a>
-          <div class="nav-item dropdown">
-              {{-- <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-              <div class="dropdown-menu m-0"> --}}
-                  <a href="services" class="dropdown-item">Our Service</a>
-                  {{-- <a href="testimonial.html" class="dropdown-item">Testimonial</a> --}}
+          <div class="nav-item  dropdown">
+            @auth('customer')  
+              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">user</a>
+              <div class="dropdown-menu">
+                  <h5 >{{ Auth::guard('customer')->user()->name }}</h5>
+                  <form method="POST" action="{{ route('customer.logout') }}">
+                    @csrf
+                    <button type="submit" class="btn btn-danger">
+                        Logout
+                    </button>
+                </form>
               </div>
+              @else
+                <a href="customer-login" class="nav-item nav-link"> LogIn</a>
+              @endauth
           </div>
          
       </div>

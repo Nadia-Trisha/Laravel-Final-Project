@@ -19,12 +19,13 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <label>Name *</label>
-                        <input type="text" class="form-control" name="customerName">
+                        <input type="text" class="form-control" name="customerName" value="{{ Auth::guard('customer')->user()->name }}">
+                        <input type="hidden" class="form-control" name="customerName" value="{{ Auth::guard('customer')->user()->id }}">
                     </div>
 
                 </div>
                 <label>Email address *</label>
-                <input type="email" class="form-control" name="email">
+                <input type="email" class="form-control" name="email" value="{{ Auth::guard('customer')->user()->email }}">
 
                 <label>Phone Number *</label>
                 <input type="text" class="form-control" name="phone">
