@@ -65,7 +65,7 @@ class ProductController extends Controller
 
         $model = new Product();       
          if($model->create($data)){
-            $request->photo->move('images', $filename);    
+            $request->photo->move('images/cake', $filename);    
             return redirect('product')->with('msg', 'Successfully Product Added');
           }
        }      

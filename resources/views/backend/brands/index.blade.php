@@ -19,7 +19,7 @@
         <td>{{ $brand->name }}</td>
         {{-- <td>{{ $brand->image }}</td> --}}
         <td>{{ $brand->designation }}</td>
-        <td> <img src="{{'images/cake/'.$brand->image}}" width="100" alt=""> </td>
+        <td> <img src="{{'images/cake/'. $brand->image}}" width="100" alt=""> </td>
         <td>
             <form action="{{ route('brands.destroy',$brand->id) }}" method="POST">
 

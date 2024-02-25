@@ -22,8 +22,8 @@
                         </div>
                     </div>
                     <div class="bg-dark border-inner text-center p-4">
-                        <h4 class="text-uppercase text-primary">Full Name</h4>
-                        <p class="text-white m-0">Designation</p>
+                        <h4 class="text-uppercase text-primary">Najnin Zahan</h4>
+                        <p class="text-white m-0">Junior chief</p>
                     </div>
                 </div>
             </div>
@@ -40,8 +40,8 @@
                         </div>
                     </div>
                     <div class="bg-dark border-inner text-center p-4">
-                        <h4 class="text-uppercase text-primary">Full Name</h4>
-                        <p class="text-white m-0">Designation</p>
+                        <h4 class="text-uppercase text-primary">Masum Hossain</h4>
+                        <p class="text-white m-0">Senior chief</p>
                     </div>
                 </div>
             </div>
@@ -58,8 +58,8 @@
                         </div>
                     </div>
                     <div class="bg-dark border-inner text-center p-4">
-                        <h4 class="text-uppercase text-primary">Full Name</h4>
-                        <p class="text-white m-0">Designation</p>
+                        <h4 class="text-uppercase text-primary">Allauddin</h4>
+                        <p class="text-white m-0">Senior chief</p>
                     </div>
                 </div>
             </div>

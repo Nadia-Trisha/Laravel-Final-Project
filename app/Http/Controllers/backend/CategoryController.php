@@ -26,6 +26,13 @@ class CategoryController extends Controller
         return view('backend.brands.create');
     }
 
+    public function category()
+    {
+        return view('backend.category.create');
+    }
+
+
+
     public function store(Request $request)
     {
         

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 13, 2024 at 08:30 AM
+-- Generation Time: Feb 25, 2024 at 07:33 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -44,7 +44,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `email_verified_at`, `password`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@gmail.com', NULL, '$2y$12$Qa6.lxFYpHzr7NgMO9L1s.Ts9e9y4maQM2DWnR9czn73KsNG.1uba', 1, NULL, '2024-02-05 11:10:41', '2024-02-05 11:10:41');
+(1, 'admin', 'admin@gmail.com', NULL, '$2y$12$zoDW/GRPD7tHU6Wps0I38u3j2JpfXxGru8vQv92xSbrMoCwZ..zDS', 1, NULL, '2024-02-25 03:21:47', '2024-02-25 03:21:47');
 
 -- --------------------------------------------------------
 
@@ -79,12 +79,11 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(4, 'Chocolate cake', '2024-02-06 03:17:06', '2024-02-06 03:17:06'),
-(5, 'Strawberry Cake', '2024-02-06 03:17:32', '2024-02-06 03:17:32'),
-(6, 'Carrot Cake', '2024-02-06 03:18:45', '2024-02-06 03:18:45'),
-(7, 'Marvel Cake', '2024-02-06 03:19:03', '2024-02-06 03:19:03'),
-(8, 'Red Velbet', '2024-02-06 03:19:23', '2024-02-06 03:19:23'),
-(9, 'Bekary', '2024-02-06 03:19:44', '2024-02-06 03:19:44');
+(1, 'Chocolate cake', '2024-02-25 03:21:47', '2024-02-25 03:21:47'),
+(2, 'Vanila Cake', '2024-02-25 03:21:47', '2024-02-25 03:21:47'),
+(3, 'Red Velbet', '2024-02-25 03:21:47', '2024-02-25 03:21:47'),
+(4, 'Marvel Cake', '2024-02-25 06:13:42', '2024-02-25 06:13:42'),
+(5, 'Carrot Cake', '2024-02-25 06:28:58', '2024-02-25 06:28:58');
 
 -- --------------------------------------------------------
 
@@ -108,11 +107,32 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `name`, `email`, `phone`, `address`, `subject`, `created_at`, `updated_at`) VALUES
-(1, 'Masum Hossain', 'masum@gmail.com', 5046025, 'sdaklkfjahlkfj', 'asdlfkjahlkfjahslkfdj', '2024-02-05 10:49:12', '2024-02-05 10:49:12'),
-(3, 'Nadia', 'masuma@gmail.com', 5046025, 'sdaklkfjahlkfj', 'asdlfkjahlkfjahslkfdj', '2024-02-05 10:50:37', '2024-02-05 10:50:37'),
-(4, 'Sadid', 'sadid@gmail.com', 1876543345, 'Tangail', 'Hello ,I am Sadid. Want to know about your contact.', '2024-02-06 03:37:10', '2024-02-06 03:37:10'),
-(6, 'Masum Hossain', 'masums@gmail.com', 1876543345, 'jhkjhgkjhgkjg', 'khlkjhkjhlk', '2024-02-06 03:49:02', '2024-02-06 03:49:02'),
-(7, 'Taslima Akter Shikha', 'shikha@gmail.com', 1999564789, 'Lalmatia, Mohammadpur', 'wanna know about you', '2024-02-10 03:30:12', '2024-02-10 03:30:12');
+(1, 'Mamunur', 'mamun@gmail.com', 1876543345, 'Vola', 'hello there is some', '2024-02-25 06:26:48', '2024-02-25 06:26:48'),
+(2, 'Nabila Naeem', 'nabila@gmail.com', 175674836, 'Demra', 'Hello ,I am Nabila. Want to know about your contact.', '2024-02-25 06:27:51', '2024-02-25 06:27:51');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customers`
+--
+
+CREATE TABLE `customers` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `customers`
+--
+
+INSERT INTO `customers` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'shikha', 'shikha@gmail.com', NULL, '$2y$12$4WPRuatDSs5u5/FAxjNPBOI7YkqIPwVheaARk1pV8tySywTY8vvB6', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -129,6 +149,32 @@ CREATE TABLE `failed_jobs` (
   `exception` longtext NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `masterchief`
+--
+
+CREATE TABLE `masterchief` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `designation` varchar(50) NOT NULL,
+  `image` varchar(50) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `masterchief`
+--
+
+INSERT INTO `masterchief` (`id`, `name`, `designation`, `image`, `created_at`, `updated_at`) VALUES
+(2, 'Trisha', 'senior chief', NULL, '2024-02-24 23:11:19', '2024-02-24 23:11:19'),
+(4, 'Nadia', 'senior chief', NULL, '2024-02-24 23:22:35', '2024-02-24 23:22:35'),
+(5, 'Alauddin', 'senior chief', '1708841177.jpg', '2024-02-25 00:06:17', '2024-02-25 00:06:17'),
+(6, 'Masum Hossain', 'senior chief', '1708841898.jpg', '2024-02-25 00:18:18', '2024-02-25 00:18:18'),
+(7, 'Najnin Zahan', 'junior chief', '1708841948.jpg', '2024-02-25 00:19:08', '2024-02-25 00:19:08');
 
 -- --------------------------------------------------------
 
@@ -155,7 +201,42 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (6, '2024_01_03_063157_create_products_table', 1),
 (7, '2024_01_09_033617_create_admins_table', 1),
 (8, '2024_01_27_042323_create_brands_table', 1),
-(9, '2024_02_05_065351_create-contacts-table', 1);
+(9, '2024_02_05_065351_create-contacts-table', 1),
+(10, '2024_02_17_052014_create_orders_table', 1),
+(11, '2024_02_19_035744_create_masterchief_table', 1),
+(12, '2024_02_24_074831_create_customers_table', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `order_number` varchar(150) NOT NULL,
+  `sub_total` double NOT NULL,
+  `total_amount` double NOT NULL,
+  `productName` varchar(255) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `customerName` varchar(255) DEFAULT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `country` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `order_number`, `sub_total`, `total_amount`, `productName`, `quantity`, `customerName`, `email`, `phone`, `country`, `address`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'ORD 2131', 1600, 1600, 'Red Velbet cake', 2, '1', 'shikha@gmail.com', '0175674836', 'Bangladesh', 'Dhaka', 1, '2024-02-24 22:14:11', '2024-02-25 00:31:32'),
+(2, 'ORD 2103', 2900, 2900, 'Vanila cake', 3, '1', 'shikha@gmail.com', '01876543345', 'Bangladesh', 'Chitagong', 0, '2024-02-24 22:32:55', '2024-02-24 22:32:55'),
+(3, 'ORD 2999', 1000, 1000, 'Chocolate cake', 1, '1', 'shikha@gmail.com', '01876543345', 'Bangladesh', 'Chitagong', 2, '2024-02-25 00:25:25', '2024-02-25 00:31:42');
 
 -- --------------------------------------------------------
 
@@ -197,7 +278,7 @@ CREATE TABLE `personal_access_tokens` (
 CREATE TABLE `products` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(100) NOT NULL,
-  `description` varchar(200) NOT NULL,
+  `description` varchar(500) NOT NULL,
   `image` varchar(50) DEFAULT NULL,
   `tags` varchar(200) DEFAULT NULL,
   `price` decimal(10,2) NOT NULL,
@@ -212,12 +293,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `image`, `tags`, `price`, `category_id`, `availibility`, `created_at`, `updated_at`) VALUES
-(7, 'Cake', '<p>thihhjvhg</p>', '1707189367.jpg', '[\"full-sleeves\"]', 500.00, 1, 0, '2024-02-05 21:16:07', '2024-02-05 21:16:07'),
-(8, 'Cake', '<p>jhgjhgj</p>', '1707189662.jpg', '[\"half-sleeves\"]', 900.00, 6, 1, '2024-02-05 21:21:02', '2024-02-05 21:21:02'),
-(9, 'Cake', '<p>xzcxcdfsf</p>', '1707189787.jpg', '[\"full-sleeves\"]', 3500.00, 5, 1, '2024-02-05 21:23:07', '2024-02-05 21:23:07'),
-(10, 'Cake', '<p>gjhtgfgdcfg</p>', '1707189919.jpg', '[\"lether\"]', 3500.00, 5, 1, '2024-02-05 21:25:19', '2024-02-05 21:25:19'),
-(11, 'Cake', '<p>gvgfdg ghfhfh gfdghfhgfh gfgfgg</p>', '1707189994.jpg', '[\"full-sleeves\"]', 580.00, 5, 1, '2024-02-05 21:26:34', '2024-02-05 21:26:34'),
-(12, 'Cake', '<p>dfdggfg</p>', '1707190048.jpg', '[\"full-sleeves\"]', 780.00, 6, 0, '2024-02-05 21:27:28', '2024-02-05 21:27:28');
+(1, 'Chocolate cake', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,', 'chocolate.jpg', NULL, 1000.00, 1, 1, '2024-02-25 03:21:47', '2024-02-25 03:21:47'),
+(2, 'Vanila cake', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,', 'wedding1.jpg', NULL, 900.00, 2, 1, '2024-02-25 03:21:47', '2024-02-25 03:21:47'),
+(3, 'Red Velbet cake', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,', 'redvelbet.jpg', NULL, 800.00, 3, 1, '2024-02-25 03:21:47', '2024-02-25 03:21:47'),
+(5, 'Marvel Cake', '<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,</p>', '1708836229.jpg', '[\"lether\"]', 3500.00, 2, 0, '2024-02-24 22:43:49', '2024-02-25 00:31:09'),
+(6, 'Chocolate cake', '<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,</p>', '1708842610.jpg', '[\"full-sleeves\",\"half-sleeves\"]', 3500.00, 5, 1, '2024-02-25 00:30:10', '2024-02-25 00:30:31');
 
 -- --------------------------------------------------------
 
@@ -241,8 +321,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Masum', 'masum@gmail.com', NULL, '$2y$12$fgYmpquSHoGJrWxbr5ktsuqufWF1sZZkYJMxcOFVoPYp1Xdlif8v.', NULL, '2024-02-05 11:10:41', '2024-02-05 11:10:41'),
-(2, 'Nadia', 'shikha@gmail.com', NULL, '$2y$12$OCQe1BIRPnscnYFMUfmQgOv6xfEqosB7jEpOb0qyXCk22Zb395qHW', NULL, '2024-02-05 05:29:15', '2024-02-05 05:29:15');
+(1, 'Masum', 'masum@gmail.com', NULL, '$2y$12$JT1K1UEwkikZkvlplwJcTuvI34qPVlBlHsCqpUtd.M992z9XOmoEC', NULL, '2024-02-25 03:21:46', '2024-02-25 03:21:46');
 
 --
 -- Indexes for dumped tables
@@ -275,6 +354,13 @@ ALTER TABLE `contacts`
   ADD UNIQUE KEY `contacts_email_unique` (`email`);
 
 --
+-- Indexes for table `customers`
+--
+ALTER TABLE `customers`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `customers_email_unique` (`email`);
+
+--
 -- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -282,9 +368,21 @@ ALTER TABLE `failed_jobs`
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
+-- Indexes for table `masterchief`
+--
+ALTER TABLE `masterchief`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -334,13 +432,19 @@ ALTER TABLE `brands`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `customers`
+--
+ALTER TABLE `customers`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -349,10 +453,22 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `masterchief`
+--
+ALTER TABLE `masterchief`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -364,13 +480,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

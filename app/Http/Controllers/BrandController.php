@@ -15,7 +15,7 @@ class BrandController extends Controller
         $brands = Brand::latest()->paginate(3);
         
         return view('backend.brands.index', compact('brands'))
-                    ->with('i', (request()->input('page', 1) - 1) * 5);
+                    ->with('i', (request()->input('page', 1) - 1) * 7);
     }
 
     /**
@@ -45,10 +45,12 @@ class BrandController extends Controller
             'image' => $filename, 
         ];
 
+        // dd($data);
+
         $brand = Brand::create($data);
         
         if ($brand) {
-            $request->image->move('images', $filename); 
+            $request->image->move('images/cake', $filename); 
             return redirect()->route('brands.index')->with('msg','masterchief insert successfully ');   
             // return redirect->()route->()->with('msg', 'Successfully Added');
         }

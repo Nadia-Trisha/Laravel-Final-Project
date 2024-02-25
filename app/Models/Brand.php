@@ -11,7 +11,7 @@ class Brand extends Model
 
     protected $table= 'masterchief';
     protected $fillable = [
-        'name', 'designation', 'photo',
+        'name', 'designation', 'image',
         // add other fields as needed
     ];
 
